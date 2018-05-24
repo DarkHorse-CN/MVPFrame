@@ -10,8 +10,8 @@ import com.darkhorse.mvpframe.mvp.model.TestMvpModel
  */
 class TestMvpPresenter : TestMvpContract.Presenter, BaseMvpPresenter<TestMvpContract.Model, TestMvpContract.View>() {
     override fun getData() {
-        if (mModel!!.getData()) {
-            mView!!.onSuccess()
+        if (mModel.getData()) {
+            mView?.onSuccess()
         }
     }
 

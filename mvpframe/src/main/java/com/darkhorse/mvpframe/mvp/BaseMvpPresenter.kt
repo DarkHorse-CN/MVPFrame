@@ -7,28 +7,23 @@ import java.lang.ref.WeakReference
  * Created by DarkHorse on 2018/5/8.
  */
 abstract class BaseMvpPresenter<M, V : BaseMvpView> {
-    private var mWeakReference: WeakReference<V>? = null
+    private lateinit var mWeakReference: WeakReference<V>
 
     protected var mView: V? = null
         get() {
-            return mWeakReference?.get()
+            return mWeakReference.get()
         }
 
-    protected var mModel: M? = null
-        get() {
-            if (field == null) {
-                field = createModel()
-            }
-            return field
-        }
+    protected val mModel: M by lazy {
+        createModel()
+    }
 
     fun attachView(view: V) {
         mWeakReference = WeakReference(view)
     }
 
     fun detachView() {
-        mWeakReference?.clear()
-        mWeakReference = null
+        mWeakReference.clear()
     }
 
     abstract fun createModel(): M
