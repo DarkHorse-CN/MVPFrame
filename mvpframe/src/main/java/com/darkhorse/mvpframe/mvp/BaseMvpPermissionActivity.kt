@@ -7,25 +7,27 @@ import com.darkhorse.baseframe.permission.PermissionActivity
  * Created by DarkHorse on 2018/5/24.
  */
 abstract class BaseMvpPermissionActivity<M, V : BaseMvpView, P : BaseMvpPresenter<M, V>> : PermissionActivity() {
-    @Suppress("UNCHECKED_CAST")
-    protected var mPresenter: P? = null
-        get() {
-            if (field == null) {
-                field = createPresenter()
-                field!!.attachView(this as V)
-                hasAttach = true
-            }
-            return field
-        }
+
+    protected val mPresenter: P by lazy {
+        initPresenter()
+    }
 
     private var hasAttach: Boolean = false
+
+    @Suppress("UNCHECKED_CAST")
+    private fun initPresenter(): P {
+        val presenter = createPresenter()
+        presenter.attachView(this as V)
+        hasAttach = true
+        return presenter
+    }
 
     protected abstract fun createPresenter(): P
 
     override fun onDestroy() {
         super.onDestroy()
         if (hasAttach) {
-            mPresenter!!.detachView()
+            mPresenter.detachView()
         } else {
             hasAttach = false
         }

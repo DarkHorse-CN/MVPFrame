@@ -34,7 +34,7 @@ class TestMvpActivity : BaseMvpActivity<TestMvpContract.Model, TestMvpContract.V
 
     override fun onClick(v: View?) {
         when (v) {
-            btn_test -> mPresenter!!.getData()
+            btn_test -> mPresenter.getData()
         }
     }
 
