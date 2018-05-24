@@ -1,6 +1,6 @@
 package com.darkhorse.mvpframe.mvp
 
-import com.darkhorse.mvpframe.BaseActivity
+import com.darkhorse.baseframe.BaseActivity
 
 /**
  * Description:
