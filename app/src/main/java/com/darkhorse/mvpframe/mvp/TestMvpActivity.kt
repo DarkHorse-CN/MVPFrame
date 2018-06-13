@@ -25,7 +25,7 @@ class TestMvpActivity : BaseMvpActivity<TestMvpContract.Model, TestMvpContract.V
     }
 
     override fun onSuccess() {
-        Toast.makeText(mContext, "666", Toast.LENGTH_SHORT).show()
+        toast(666.toString())
     }
 
     override fun onFailure() {

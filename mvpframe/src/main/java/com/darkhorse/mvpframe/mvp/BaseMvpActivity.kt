@@ -2,6 +2,7 @@ package com.darkhorse.mvpframe.mvp
 
 import com.darkhorse.baseframe.BaseActivity
 
+
 /**
  * Description:
  * Created by DarkHorse on 2018/5/8.

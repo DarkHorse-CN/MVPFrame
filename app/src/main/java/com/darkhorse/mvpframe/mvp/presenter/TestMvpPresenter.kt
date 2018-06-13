@@ -1,8 +1,8 @@
 package com.darkhorse.mvpframe.mvp.presenter
 
-import com.darkhorse.mvpframe.mvp.BaseMvpPresenter
 import com.darkhorse.mvpframe.mvp.contract.TestMvpContract
 import com.darkhorse.mvpframe.mvp.model.TestMvpModel
+import com.darkhorse.mvpframe.mvp.BaseMvpPresenter
 
 /**
  * Description:

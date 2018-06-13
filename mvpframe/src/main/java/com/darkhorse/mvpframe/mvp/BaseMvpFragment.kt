@@ -1,12 +1,12 @@
 package com.darkhorse.mvpframe.mvp
 
-import com.darkhorse.baseframe.permission.PermissionActivity
+import com.darkhorse.baseframe.BaseFragment
 
 /**
  * Description:
- * Created by DarkHorse on 2018/5/24.
+ * Created by DarkHorse on 2018/5/28.
  */
-abstract class BaseMvpPermissionActivity<M, V : BaseMvpView, P : BaseMvpPresenter<M, V>> : PermissionActivity() {
+abstract class BaseMvpFragment<M, V : BaseMvpView, P : BaseMvpPresenter<M, V>> : BaseFragment() {
 
     protected val mPresenter: P by lazy {
         initPresenter()
@@ -22,8 +22,6 @@ abstract class BaseMvpPermissionActivity<M, V : BaseMvpView, P : BaseMvpPresente
         return presenter
     }
 
-    protected abstract fun createPresenter(): P
-
     override fun onDestroy() {
         super.onDestroy()
         if (hasAttach) {
@@ -32,4 +30,6 @@ abstract class BaseMvpPermissionActivity<M, V : BaseMvpView, P : BaseMvpPresente
             hasAttach = false
         }
     }
+
+    protected abstract fun createPresenter(): P
 }
