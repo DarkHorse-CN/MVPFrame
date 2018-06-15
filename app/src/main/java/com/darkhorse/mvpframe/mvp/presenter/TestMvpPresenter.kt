@@ -8,8 +8,8 @@ import com.darkhorse.mvpframe.mvp.model.TestMvpModel
  * Description:
  * Created by DarkHorse on 2018/5/8.
  */
-class TestMvpPresenter : TestMvpContract.Presenter, BasePresenter<TestMvpContract.Model, TestMvpContract.View>() {
-    override fun getData() {
+class TestMvpPresenter : TestMvpContract.Presenter() {
+    override fun geData() {
         if (mModel.getData()) {
             mView?.onSuccess()
         }
