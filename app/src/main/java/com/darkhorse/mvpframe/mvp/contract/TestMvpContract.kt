@@ -1,5 +1,4 @@
 package com.darkhorse.mvpframe.mvp.contract
-
 import com.darkhorse.mvpframe.mvp.BaseMvpView
 
 /**
@@ -8,7 +7,7 @@ import com.darkhorse.mvpframe.mvp.BaseMvpView
  */
 interface TestMvpContract {
     interface Model {
-        fun getData() : Boolean
+        fun getData(): Boolean
     }
 
     interface View : BaseMvpView {
@@ -16,7 +15,8 @@ interface TestMvpContract {
         fun onFailure()
     }
 
-    interface Presenter {
+    interface Presenter  {
         fun getData()
     }
+
 }

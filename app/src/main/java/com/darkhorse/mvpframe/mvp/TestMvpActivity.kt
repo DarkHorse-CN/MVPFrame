@@ -1,10 +1,10 @@
 package com.darkhorse.mvpframe.mvp
 
 import android.view.View
-import android.widget.Toast
 import com.darkhorse.mvpframe.R
 import com.darkhorse.mvpframe.mvp.contract.TestMvpContract
 import com.darkhorse.mvpframe.mvp.presenter.TestMvpPresenter
+import com.darkhorse.toolset.utils.extension.toast
 import kotlinx.android.synthetic.main.activity_test_mvp.*
 
 class TestMvpActivity : BaseMvpActivity<TestMvpContract.Model, TestMvpContract.View, TestMvpPresenter>(), TestMvpContract.View, View.OnClickListener {
