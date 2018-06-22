@@ -6,7 +6,7 @@ import java.lang.ref.WeakReference
  * Description:
  * Created by DarkHorse on 2018/5/8.
  */
-abstract class BasePresenter<M, V : BaseMvpView> {
+abstract class BaseMvpPresenter<M, V : BaseMvpView> {
     private lateinit var mWeakReference: WeakReference<V>
 
     protected var mView: V? = null

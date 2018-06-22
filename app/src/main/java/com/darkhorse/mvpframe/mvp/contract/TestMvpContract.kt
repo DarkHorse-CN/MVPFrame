@@ -1,7 +1,7 @@
 package com.darkhorse.mvpframe.mvp.contract
 
 import com.darkhorse.mvpframe.mvp.BaseMvpView
-import com.darkhorse.mvpframe.mvp.BasePresenter
+import com.darkhorse.mvpframe.mvp.BaseMvpPresenter
 
 /**
  * Description:
@@ -17,8 +17,7 @@ interface TestMvpContract {
         fun onFailure()
     }
 
-    abstract class Presenter : BasePresenter<Model, View>() {
-        abstract fun geData()
+    interface Presenter {
+        fun geData()
     }
-
 }

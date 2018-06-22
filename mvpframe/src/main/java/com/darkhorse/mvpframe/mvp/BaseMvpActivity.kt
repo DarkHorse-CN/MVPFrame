@@ -7,7 +7,7 @@ import com.darkhorse.baseframe.BaseActivity
  * Description:
  * Created by DarkHorse on 2018/5/8.
  */
-abstract class BaseMvpActivity<M, V : BaseMvpView, P : BasePresenter<M, V>> : BaseActivity() {
+abstract class BaseMvpActivity<M, V : BaseMvpView, P : BaseMvpPresenter<M, V>> : BaseActivity() {
 
     protected val mPresenter: P by lazy {
         initPresenter()
